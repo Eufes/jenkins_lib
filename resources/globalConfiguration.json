@@ -1,23 +1,23 @@
 {
-  "$schema": "schema.json",
-  "v8version": "8.3",
-  "edtVersion": "",
+  "$schema": "https://raw.githubusercontent.com/Eufes/jenkins-lib/main/resources/schema.json",
+  "v8version": "8.3.19.1467",
+  "edtVersion": "2021.3.4:x86_64",
   "srcDir": "src/cf",
   "sourceFormat": "designer",
   "defaultBranch": "main",
   "secrets": {
-    "storagePath": "UNKNOWN_ID",
-    "storage": "UNKNOWN_ID",
+    "storagePath": "Eufes_pipetest_STORAGE_PATH",
+    "storage": "Eufes_pipetest_STORAGE_USER",
     "telegramBotToken": "UNKNOWN_ID",
     "telegramChatId": "UNKNOWN_ID"
   },
   "stages": {
-    "initSteps": false,
+    "initSteps": true,
     "sonarqube": false,
-    "bdd": false,
-    "syntaxCheck": false,
-    "edtValidate": false,
-    "smoke": false,
+    "bdd": true,
+    "syntaxCheck": true,
+    "edtValidate": true,
+    "smoke": true,
     "email": false,
     "telegram": false
   },
@@ -41,7 +41,7 @@
   },
   "bdd": {
     "vrunnerSteps": [
-      "vanessa --settings ./tools/vrunner.json"
+      "vanessa --settings ./tools/JSON/vrunner.json"
     ]
   },
   "sonarqube": {
@@ -69,11 +69,11 @@
       "-CheckUseSynchronousCalls",
       "-DistributiveModules"
     ],
-    "vrunnerSettings": "./tools/vrunner.json"
+    "vrunnerSettings": "./tools/JSON/vrunner.json"
   },
   "smoke": {
-    "vrunnerSettings": "./tools/vrunner.json",
-    "xddConfigPath": "./tools/xUnitParams.json",
+    "vrunnerSettings": "./tools/JSON/vrunner.json",
+    "xddConfigPath": "./tools/JSON/vanessaTDDconf.json",
     "publishToAllureReport": false,
     "publishToJUnitReport": true
   },
