@@ -10,7 +10,7 @@
     "zipInfoBase": 123
   },
   "initInfobase": {
-    "preloadDTURL": "https://github.com/Eufes/pipetest/blob/main/dump.dt",
+    "preloadDTURL": "",
     "runMigration": false,
     "additionalInitializationSteps": [
       "vanessa --settings ./tools/vrunner.first.json"
