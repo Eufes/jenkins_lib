@@ -6,7 +6,7 @@
         "--db-user": "",
         "--db-pwd": "",
         "--workspace": ".",
-        "--v8version":"8.3.19",
+        "--v8version":"8.3.19.1467",
         "--locale":"ru",
         "--language":"ru",
         "--additional": "/DisplayAllFunctions /Lru  /iTaxi ",
