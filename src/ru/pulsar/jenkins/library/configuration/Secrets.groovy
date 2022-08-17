@@ -15,20 +15,12 @@ class Secrets implements Serializable {
     @JsonPropertyDescription("Данные авторизации в хранилище конфигурации")
     String storage
 
-    @JsonPropertyDescription("Идентификатор telegram-чата для отправки уведомлений")
-    String telegramChatId
-
-    @JsonPropertyDescription("Токен авторизации telegram-бота для отправки уведомлений")
-    String telegramBotToken
-
     @Override
     @NonCPS
     String toString() {
         return "Secrets{" +
             "storagePath='" + storagePath + '\'' +
             ", storage='" + storage + '\'' +
-            ", telegramChatId='" + telegramChatId + '\'' +
-            ", telegramBotToken='" + telegramBotToken + '\'' +
             '}';
     }
 }

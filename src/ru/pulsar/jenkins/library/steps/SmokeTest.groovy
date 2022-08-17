@@ -6,7 +6,6 @@ import ru.pulsar.jenkins.library.configuration.JobConfiguration
 import ru.pulsar.jenkins.library.ioc.ContextRegistry
 import ru.pulsar.jenkins.library.utils.FileUtils
 import ru.pulsar.jenkins.library.utils.Logger
-import ru.pulsar.jenkins.library.utils.StringJoiner
 import ru.pulsar.jenkins.library.utils.VRunner
 
 class SmokeTest implements Serializable {
@@ -62,14 +61,14 @@ class SmokeTest implements Serializable {
         FilePath pathToAllureReport = FileUtils.getFilePath("$env.WORKSPACE/$allureReport")
         String allureReportDir = FileUtils.getLocalPath(pathToAllureReport.getParent())
 
-        StringJoiner reportsConfigConstructor = new StringJoiner(";")
+        StringBuilder reportsConfigConstructor = new StringBuilder()
 
         if (options.publishToJUnitReport) {
             steps.createDir(junitReportDir)
 
             String junitReportCommand = "ГенераторОтчетаJUnitXML{$junitReport}"
 
-            reportsConfigConstructor.add(junitReportCommand)
+            reportsConfigConstructor.append(junitReportCommand)
         }
 
         if (options.publishToAllureReport) {
@@ -77,7 +76,10 @@ class SmokeTest implements Serializable {
 
             String allureReportCommand = "ГенераторОтчетаAllureXMLВерсия2{$allureReport}"
 
-            reportsConfigConstructor.add(allureReportCommand)
+            if (reportsConfigConstructor.length() > 0) {
+                reportsConfigConstructor.append(';')
+            }
+            reportsConfigConstructor.append(allureReportCommand)
         }
 
         if (reportsConfigConstructor.length() > 0) {

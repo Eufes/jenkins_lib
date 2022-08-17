@@ -17,19 +17,13 @@ class PublishAllure implements Serializable {
     }
 
     def run() {
+        steps = ContextRegistry.getContext().getStepExecutor()
 
         Logger.printLocation()
 
-        if (config == null) {
-            Logger.println("jobConfiguration is not initialized")
-            return
-        }
-
-        steps = ContextRegistry.getContext().getStepExecutor()
-
         safeUnstash('init-allure')
         safeUnstash('bdd-allure')
-        if (config.stageFlags.smoke && config.smokeTestOptions.publishToAllureReport) {
+        if (config.smokeTestOptions.publishToAllureReport) {
             safeUnstash(SmokeTest.SMOKE_ALLURE_STASH)
         }
 
