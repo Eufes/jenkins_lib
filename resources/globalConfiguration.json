@@ -130,5 +130,5 @@
       "onSuccess": false
     }
   },
-  "logosConfig": ""
+  "logosConfig": "logger.rootLogger=DEBUG"
 }
