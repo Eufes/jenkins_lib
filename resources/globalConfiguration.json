@@ -36,7 +36,7 @@
   },
   "initInfobase": {
     "initMethod": "fromStorage",
-    "runMigration": true,
+    "runMigration": false,
     "vrunnerSettings": "./tools/JSON/vrunner.json",
     "preloadDTURL": "file://localhost/C:/DevOps/dump.dt",
     "additionalInitializationSteps": []
