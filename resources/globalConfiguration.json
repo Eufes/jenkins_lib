@@ -38,7 +38,7 @@
     "initMethod": "fromStorage",
     "runMigration": true,
     "vrunnerSettings": "./tools/JSON/vrunner.json",
-    "preloadDTURL": "file:///C:\DevOps\dump.dt",
+    "preloadDTURL": "",
     "additionalInitializationSteps": []
   },
   "bdd": {
