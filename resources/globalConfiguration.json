@@ -38,6 +38,7 @@
     "initMethod": "fromStorage",
     "runMigration": true,
     "vrunnerSettings": "./tools/JSON/vrunner.json",
+    "preloadDTURL": "https://github.com/Eufes/pipetest/blob/main/dump.dt",
     "additionalInitializationSteps": []
   },
   "bdd": {
